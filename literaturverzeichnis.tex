@@ -1,0 +1,109 @@
+\section{Literaturverzeichnis}
+
+\noindent
+Literaturverzeichnisse sind eine sehr wichtige Komponente
+in vielen Arbeiten und man sollte diese verwenden.
+
+Ein solches in \LaTeX~zu erstellen ist relativ einfach. Man
+erstellt ein separates File welches die Quellen beinhaltet.
+Dieses wird dann Zusammen mit dem Tool \BibTeX~genutzt zur
+Erzeugung der Verzeichnisse. 
+
+Viele Verlagseiten und auch z.B. die Wikipedia bietet einen automatischen
+Export für \BibTeX~Einträge. Hier ein Beispiel zum Wikipedia-Artikel zu \LaTeX. \cite{wiki:latex}
+
+\begin{center}
+\begin{lstlisting}[caption=BibTeX Export aus Wikipedia]{wikibib}
+@misc{ wiki:latex,
+   author = "Wikipedia",
+   title  = "LaTeX --- Wikipedia{,} Die freie Enzyklopädie",
+   year   = "2012",
+   url    = "http://de.wikipedia.org/w/index.
+             php?title=LaTeX&oldid=110063618",
+   note   = "[Online; Stand 2. Dezember 2012]"
+ }
+\end{lstlisting}
+\end{center}
+
+\noindent
+Möchte man diese Quelle in seinem Dokument zitieren so gibt es je nach Style 
+des Zitierens ein anderes Kommando. Bei der in diesem Werk empfohlenem APA Style
+genügt es einfach \lstinline|\cite{wiki:latex}| zu schreiben.
+
+\begin{description}
+    \item \lstinline|[@misc]| weist \BibTex~an, dass es sich bei dieser Quelle
+    vom typ misc (Abkürzung von miscellaneous, also ``diverses'') handelt.
+    Falls man ein Buch zitier möchte so gibt man stattdessen \lstinline|@book| 
+    ein etc.
+    \item \lstinline|[wiki:latex]| ist das Makro für diese Quelle. D.h. man 
+    schreibt im Dokument eben dieses Makro um auf diese Quelle zu referenzieren.
+    \item \lstinline|["Wikipedia"]| Statt die Gänsefüsschem zu schreiben kann man
+    auch einfach geschweifte Klammern verwenden \lstinline|{Wikipedia}|.
+    Hier ist noch nützlich zu wissen, dass doppelte Geschweifte Klammern  die 
+    Inhalte innerhalb der Geschweiften Klammern nicht verändert in ihrer 
+    Gross- Kleinschreibung. Dies gilt aber nicht immer. Oft geht es auch ohne.
+\end{description}
+
+\noindent 
+Hier folgt nun ein Beispiel von einem \Bib File mit verschiedenen Quellen.
+
+\begin{center}
+\begin{lstlisting}[caption=BibTeX Datei mit verschiedenen Quellen]{masterbib}
+@misc{ wiki:latex,
+   author = "Wikipedia",
+   title  = "{LaTeX --- Wikipedia{,} Die freie Enzyklopädie}",
+   year   = "2012",
+   url    = "http://de.wikipedia.org/w/index.
+             php?title=LaTeX&oldid=110063618",
+   note   = "[Online; Stand 2. Dezember 2012]"
+ }
+ 
+@Book{kompakt_latex,
+  author     = "Reinhard Wonneberger",
+  title      = "Kompaktfuehrer LaTe{X}",
+  address    = "Bonn",
+  year       = "1988",
+  descriptor = "LaTeX, TeX",
+}
+
+@Book{lamport_latex,
+  author    = "Leslie Lamport",
+  title     = "{{\LaTeX}}",
+  publisher = "Cyfronet",
+  address   = "Krak{\'o}w",
+  pages     = "x + 202",
+  year      = "1991",
+  bibdate   = "Wed Jun 22 18:19:42 MDT 2005",
+  bibsource = "alpha.bn.org.pl:210/INNOPAC;
+               http://www.math.utah.edu/pub/
+               tex/bib/texbook3.bib",
+  note      =  "Polish translation of ``{\LaTeX}: 
+                A Document Preparation System'', 
+                1986, by Piotr Wyrostek.",
+  acknowledgement = "Nelson H. F. Beebe, University 
+         of Utah, Department
+         of Mathematics, 110 LCB, 155 S 1400 E RM 
+         233, Salt Lake City, UT 84112-0090, USA, 
+         Tel: +1 801 581 5254, FAX: +1
+         801 581 4148, e-mail: \path|beebe@math.utah.edu|,
+         \path|beebe@acm.org|, \path|beebe@computer.org|
+         (Internet), URL:
+         \path|http://www.math.utah.edu/~beebe/|",
+  language =    "Polish",
+  subject  = "LATEX; podr{\k{e}}cznik",
+}
+
+\end{lstlisting}
+\end{center}
+
+\noindent
+Die im Dokument zitierten Werke werden bei der Compilation\footnote{Immer 
+zuerst \BibTeX ausführen und dann \LaTeX, da \LaTeX~die Ergebnisse aus \BibTeX~
+einbindet. Es ist eine typische \LaTeX~Gewohnheit die Compilationen jeweils 
+mehrfach durchzuführen, da verschachtelungen oft nicht rekursiv auf einmal 
+ausgeführt werden können.} in das Literaturverzeichnis eingefügt.
+
+Möchte man alle Quellen aus dem \BibTeX~File aufgelistet haben, unabhängig 
+davon ob diese zitiert wurden so kann man \lstinline|\nocite{*}| verwenden.
+
+

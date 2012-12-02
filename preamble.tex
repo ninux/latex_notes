@@ -1,0 +1,268 @@
+\section{Präambel}
+\noindent
+Die Präambel ist das Fundament eines \LaTeX~Projektes. Es
+ist eben diese Präambel welche viele Einsteiger schockiert
+und gerade zu Beginn oder besser gesagt bevor man überhaupt
+angefangen hat mit einer Arbeit einen auf die Nase fallen
+lässt. Hier wird nun ein setting vorgestellt, welches
+allgemeine Bedürfnisse abdeckt.
+
+\subsection{Dokumentenklasse}
+
+Die Dokumentenklasse definiert, was man eigentlich
+schreibt. Die hier vorgenommene Einstellung setzt alle
+Default-Werte zu der entsprechenden Klasse. Mit Klasse
+meint man Bücher, Artikel, Berichte etc.
+
+\begin{center}
+\begin{lstlisting}[caption=Dokumentenklasse]{docclass}
+% Dokumenteigenschaften bzw. Dokumentenklasse
+
+\documentclass[a4paper,     % Ausgabeformat (A5, A4 etc.)
+               10pt,        % Schriftgrösse
+               fleqn]       % Formeln ausrichten
+               {article}    % Artikel, Bericht, Buch etc.
+\end{lstlisting}
+\end{center}
+
+\noindent
+Wählt man als Klasse beispielsweise \lstinline|article| so
+wird alles per Default so eingestellt, dass es am ehesten
+einem Artikel\footnote{Artikel bezeichnen bei \LaTeX~in
+aller Regel wissenschaftliche Artikel.} entspricht.
+
+\subsection{Texteigenschaften}
+
+\begin{center}
+\begin{lstlisting}[caption=Texteigenschaften]{textconf}
+% Texteigenschaften
+
+\usepackage[utf8x]{inputenc}    % utf8x kann alle
+                                % Textcodierungen
+                                % interpretieren
+\usepackage[T1]{fontenc}        % Schriftcodierung mit UTF-8
+\usepackage{textcomp}           % Erweiterung von fontenc
+\usepackage{lmodern}            % Erweiterung des
+
+\PrerenderUnicode{ä}            % PrerenderUnicode bewirkt
+\PrerenderUnicode{ü}            % dass Umlaute im PDF 
+\PrerenderUnicode{ö}            % korrekt dargestellt werden
+\end{lstlisting}
+\end{center}
+
+\noindent
+Hier ist wichtig zu erwähnen, dass das Codierunssetting vom
+Editor bzw. dem System abhängen kann. Bei manchen ist statt
+\lstinline|utf8x| die Option \lstinline|uft8| die besser.
+Es kann aber auch eine ganz andere sein wie etwa
+\lstinline|latin1| (welches bei vielen Windows Usern
+Anwendung finden wird).
+
+\subsection{Grafik}
+
+\begin{center}
+\begin{lstlisting}[caption=Grafik]{graficconf}
+% Grafikpakete
+
+\usepackage{graphics}       % Basis-Grafikpaket (TeX)
+\usepackage{graphicx}       % Extended Version
+\end{lstlisting}
+\end{center}
+
+\subsection{Sprache}
+
+\begin{center}
+\begin{lstlisting}[caption=Spracheigenschaften]{sprachconf}
+% Spracheigenschaften
+
+\usepackage[english,            % Englisch
+            ngerman]            % Neue dt. Rechtschreibung
+            {babel}             % internationalisierung
+                                % einschalten
+\end{lstlisting}
+\end{center}
+
+\subsection{HyperLinks}
+
+\begin{center}
+\begin{lstlisting}[caption=Dynamische Links]{hyperlinkconf}
+% Links im PDF erzeugen (für Verzeichnisse, URLs etc.)
+
+\usepackage{hyperref}
+\end{lstlisting}
+\end{center}
+
+\noindent
+Beim Paket \lstinline|hyperref| sollte man darauf achten,
+diese moeglichst zu Beginn in der Praeambel zu verwenden.
+Es kann bzw. es kommt zu Problemen wenn es erst nach
+bestimmten anderen Paketen geladen wird.
+
+\subsection{Mathematik}
+
+\begin{center}
+\begin{lstlisting}[caption=Mathematik]{mathconf}
+% Mathepakete
+
+\usepackage{amsmath}
+\usepackage[all]{xy}
+\end{lstlisting}
+\end{center}
+
+\subsection{PDF}
+
+\begin{center}
+\begin{lstlisting}[caption=PDF-Paket]{pdfconf}
+% PDF-Paket
+
+\usepackage{pdfpages}
+\end{lstlisting}
+\end{center}
+
+\subsection{SourceCode}
+
+\begin{center}
+\begin{lstlisting}[caption=Source-Code Paket]{sourceconf}
+% Source-Code Paket
+
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\usepackage{listings} 
+\lstset{basicstyle=\ttfamily,
+        numbers=left,
+        numberstyle=\tiny, 
+        numbersep=5pt,
+        breaklines=true,
+        backgroundcolor=\color{gray!10},
+        commentstyle=\color{darkgreen},
+        keywordstyle=\color{red},
+        frame=single,
+        tabsize=2,
+        rulecolor=\color{black!30},
+        title=\lstname,
+        breaklines=true,
+        breakatwhitespace=true,
+        framextopmargin=2pt,
+        framexbottommargin=2pt,
+        inputencoding=utf8,
+        extendedchars=true,
+        literate={Ö}{{\"O}}1
+                 {Ä}{{\"A}}1
+                 {Ü}{{\"U}}1
+                 {ü}{{\"u}}1
+                 {ä}{{\"a}}1
+                 {ö}{{\"o}}1 }
+\lstset{language=Tex}
+\lstloadlanguages{TeX}
+\end{lstlisting}
+\end{center}
+
+\subsection{Fülltext \& Lorem Ipsum}
+
+\begin{center}
+\begin{lstlisting}[caption=Fuelltext]{fillconf}
+% Fülltexte
+
+\usepackage{blindtext}  % generiert sprachlich korrekten
+                        % "Fülltext"
+\usepackage{lipsum}     % generiert klassischen
+                        % "lorem-ipsum"
+\end{lstlisting}
+\end{center}
+
+\subsection{Spezielle Symbole}
+
+\begin{center}
+\begin{lstlisting}[caption=Euro-Symbol]{symbolconf}
+% Euro Symbol
+
+\usepackage{eurosym}
+\end{lstlisting}
+\end{center}
+
+\subsection{Abkürzungen}
+
+\begin{center}
+\begin{lstlisting}[caption=Abkuerzungen]{Name}
+% Abkürzungs-Paket 
+
+\usepackage{acronym}
+\end{lstlisting}
+\end{center}
+
+\subsection{Aufzählungen}
+
+\begin{center}
+\begin{lstlisting}[caption=Auflistungen]{Name}
+% Auflistungs-Paket (für Auflistungen mit "a)", "b)"...
+
+\usepackage{enumitem}
+\end{lstlisting}
+\end{center}
+
+\subsection{Literaturverzeichnis}
+
+\begin{center}
+\begin{lstlisting}[caption=Auflistungen]{Name}
+% URL-Paket (URLs richtig darstellen z.B. in
+% Literaturverzeichnissen
+
+\usepackage{url}
+\end{lstlisting}
+\end{center}
+
+\subsection{Zitieren}
+
+\begin{center}
+\begin{lstlisting}[caption=Zitieren]{Name}
+% Zitier-Paket
+
+\usepackage{cite}       % allgemeines Paket
+\usepackage{apacite}    % Zitat-Paket für APA-Norm Zitate
+\usepackage{natbib}     % ein  bekanntes Zitierpaket mit
+                        % vielen Optionen und Optimierungen
+\end{lstlisting}
+\end{center}
+
+\subsection{Kopf- und Fusszeilen}
+
+\begin{center}
+\begin{lstlisting}[caption=Kopf- und Fusszeilen]{Name}
+% Kopf- und Fusszeilen Paket
+\usepackage{fancyhdr}
+
+
+% Kopf und Fusszeilen definieren:
+
+\pagestyle{fancy}       % deklaieren dass ein eigener Syle
+                        % benutzt wird, eben "fancy"
+\fancyhf{}              % alle Kopf- und Fusszeilenfelder
+                        % bereinigen
+% anpassen der Textbreite
+\addtolength{\textwidth}{1cm}           
+
+% anpassen des Einzugs für gerade und ungerade Seiten
+\addtolength{\evensidemargin}{-5mm}
+\addtolength{\oddsidemargin}{-5mm}
+
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+% anpassen der Kopf/Fusszeilenbreite (Summe von den Oberen)
+\addtolength{\headwidth}{1cm}           
+
+\fancyhead[L]{LuXeria}                  % Kopfzeile links
+\fancyhead[C]{\LaTeX~Notizen}           % Kopfzeile mitte
+\fancyhead[R]{\rightmark}               % Kopfzeile rechts
+
+\renewcommand{\headrulewidth}{0.4pt}    % obere Trennlinie
+
+\fancyfoot[L]{Ervin Mazlagic}           % Fusszeile links
+\fancyfoot[C]{\today}                   % Fusszeile mitte
+\fancyfoot[R]{\thepage}                 % Fusszeile rechts
+
+\renewcommand{\footrulewidth}{0.4pt}    %untere Trennlinie
+\end{lstlisting}
+\end{center}
+
+
+
+

@@ -1,0 +1,70 @@
+\section{Bilder}
+
+\noindent 
+Der Umgang in \LaTeX~neigt zu automatisiertem Gebrauch von
+bestehenden Lösungen. Dies zeigt sich als Copy-Paste Aktion
+bei vielen Usern. Hierzu kann bei entsprechendem Bedarf
+eine eigene Code-Completion Sequenz geschriben werden für
+die Geeks unter den Lesern.
+
+Ich empfehle wärmstens Bilder immer wie folgt einzufügen:
+
+\begin{lstlisting}[caption=Bilder einfuegen,
+                   label={lst:pictures}]{Name}
+% Bild einfügen
+                   
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[angle=0,
+                     width=0.6\textwidth]
+                     {meinbild.jpg}
+    \caption{Neulich in der Bar}
+    \label{pic:inderbar}
+\end{figure}
+\end{lstlisting}
+
+                  
+\begin{figure}[htbp]
+% Bild einfügen                
+    \centering
+\fbox{   
+\includegraphics[angle=0,width=0.6\textwidth]{meinbild.jpg}}
+    \caption{Neulich in der Bar}
+    \label{pic:inderbar}
+\end{figure}
+
+
+\noindent
+Zu dem Listing gibt es noch das eine oder anderen zu
+erklären:
+
+\begin{description}
+    \item \lstinline|[htbp]| Beschreibt wie die Figur
+positioniert           wird.
+           Jeder der Buchstaben stellt einen Parameter dar.
+           Mit der Reihenfolge htbp ergibt das die
+           Anweisung; stelle mein Bild bitte hier hin (h
+           für here) falls das nicht geht bitte das Bild
+           nach oben schieben (t für top) falls das auch
+           nicht geht dann eben nach unten (b für bottom)
+           und falls das dann auch nicht gehen sollte, dann
+           stells doch auf eine neue Seite (p für
+           pagebreak).
+    \item \lstinline|[angle=0]| Erlaubt das drehen des
+Bildes
+           (0-360 Grad). Hier mit 0 eingestellt.
+    \item \lstinline|[width=0.6\textwidth]| Skaliert das
+Bild. Hier
+            zum 0.4-fachen der Textbreite. Zu
+            beachten ist, dass           Textbreite nicht
+            immer der breite des aktuellen          
+            Absatzes entspricht. Beispielsweise bei Texten  
+            mit mehreren Spalten beschreibt Textbreite die  
+            Breite des Textes über die gesamte Seite. Möchte
+            man die Bilder der Spalte (Kolonne) angepasst   
+            haben so kann statt \lstinline|\textwidth| der  
+            Parameter \lstinline|\columnwidth| verwendet    
+            werden.
+\end{description}
+
+

@@ -1,0 +1,143 @@
+\section{Aufzählungen}
+
+\noindent
+Aufzählungen sind in \LaTeX~gegenüber anderen Tools sehr
+einfach aufgebaut und verleiten nicht dazu viele
+verschiedenen Typen (verschiedene Aufzählungssymbole und
+Einrückungen) zu verwenden. 
+
+\subsection{Einfache Aufzählung}
+
+\noindent
+Möchte man eine schlichte Aufzählung erstellen so kann dies
+mit folgender Eingabe erfolgen:
+
+
+\begin{lstlisting}[caption=Einfache Aufzählung,
+                   label={lst:simplelist}]{Name}
+% Einfache Aufzählung
+
+\begin{itemize}
+    \item   Das ist die Nummer Eins
+    \item   Nummer zwei kommt an dieser Stelle
+    \item   Das Letzte kommt zum Schluss
+\end{itemize}
+\end{lstlisting}
+
+\fbox{\parbox{0.9\columnwidth}{
+\begin{itemize}
+    \item   Das ist die Nummer Eins
+    \item   Nummer zwei kommt an dieser Stelle
+    \item   Das Letzte kommt zum Schluss
+\end{itemize}
+}}
+
+\subsection{Nummerierte Aufzählung}
+
+\noindent
+Möchte man eine Aufzählung machen, welche mit
+nummerierungen arbeitet so gibt man lediglich einen anderen
+Parameter ein.
+
+\begin{lstlisting}[caption=Nummerierte Aufzählung,
+                   label={lst:simplelist}]{Name}
+% Einfache Aufzählung
+
+\begin{enumerate}
+    \item   Das ist die Nummer Eins
+    \item   Nummer zwei kommt an dieser Stelle
+    \item   Das Letzte kommt zum Schluss
+\end{enumerate}
+\end{lstlisting}
+
+\fbox{\parbox{0.9\columnwidth}{
+\begin{enumerate}
+    \item   Das ist die Nummer Eins
+    \item   Nummer zwei kommt an dieser Stelle
+    \item   Das Letzte kommt zum Schluss
+\end{enumerate}
+}}
+
+\subsection{Alphabetisierte Aufzählungen}
+
+\indent
+Manchmal möchte man Aufzählungen haben, welche alphabetisch
+inkrementieren statt numerisch. Dies bedarf eines
+zusätzlichen Settings.
+
+\begin{lstlisting}[caption=Alphabetisierte Aufzählung,
+                   label={lst:simplelist}]{Name}
+% in der Präambel wird folgendes benötigt:
+\usepackage{enumitem}
+
+% Im Dokument folgt dann an entsprechender Stelle die
+% Alphabetisierte Aufzählung
+
+\begin{enumerate}[label={\alph*)}]
+    \item   Das ist die Nummer Eins
+    \item   Nummer zwei kommt an dieser Stelle
+    \item   Das Letzte kommt zum Schluss
+\end{enumerate}
+
+\end{lstlisting}
+
+\fbox{\parbox{0.9\columnwidth}{
+\begin{enumerate}[label={\alph*)}]
+    \item   Das ist die Nummer Eins
+    \item   Nummer zwei kommt an dieser Stelle
+    \item   Das Letzte kommt zum Schluss
+\end{enumerate}
+}}
+
+\subsection{Beschreibende Aufzählung}
+
+\noindent 
+Ein exotischeres Aufzählungsdesign ist die
+\lstinline|description|. Diese ist je Element nochmals
+zweigeteilt in Schlagworte und dazugehörige Beschreibung.
+Das Schlagwort wird fett gedruckt und die Beschreibung wird
+einfach eingerückt.
+
+\begin{lstlisting}[caption=Alphabetisierte Aufzählung,
+                   label={lst:simplelist}]{Name}
+% Beschreibende Aufzählung
+
+\begin{description}
+    \item [LaTeX] ist ein Softwarepaket, das die Benutzung
+          des Textprogramms TeX mit Hilfe von Makros.
+    \item [Word] ist ein unfreies aber auch unfaires 
+          Textverarbeitungsprogramm der Firma Microsoft.
+    \item [AbiWord] ist ein freies, GPL-lizenziertes
+          Textverarbeitungsprogramm, das unter Linux und
+          Microsoft Windows verfügbar ist.
+\end{description}
+\end{lstlisting}
+
+\fbox{\parbox{0.9\columnwidth}{
+\begin{description}
+    \item [LaTeX] ist ein Softwarepaket, das die Benutzung
+          des Textprogramms TeX mit Hilfe von Makros.
+          Das Programm TeX wurde von Donald E. Knuth,
+          Professor an der Stanford-University,
+          entwickelt. Leslie Lamport entwickelte Anfang
+          der 1980er Jahre[1] darauf aufbauend LaTeX, eine
+          Sammlung von TeX-Makros. Der Name ist eine
+          Abkürzung für Lamport TeX. Heute ist LaTeX die
+          am weitesten verbreitete Methode, TeX zu
+          verwenden.
+    \item [MS Word] ist ein unfreies aber auch unfaires 
+          Textverarbeitungsprogramm der Firma Microsoft.
+          Word wurde auf IBM PC-DOS (1983), Apple Macintosh
+          (1984), AT\&T Unix (1985), Atari ST (1986), SCO
+          UNIX, OS/2, und Microsoft Windows (1989)
+          portiert.
+    \item [AbiWord] ist ein freies, GPL-lizenziertes
+          Textverarbeitungsprogramm, das unter Linux und
+          Microsoft Windows verfügbar ist. Für andere
+          Betriebssysteme wie Mac OS X, SkyOS und AmigaOS
+          4 wird AbiWord nicht weiter gepflegt. Der Name
+          „AbiWord“ ist abgeleitet von der Wurzel des
+          spanischen Wortes „abierto“ für „offen“.
+\end{description}
+}}
+
