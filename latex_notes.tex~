@@ -1,0 +1,130 @@
+% Dokumenteigenschaften
+\documentclass[a4paper,10pt,fleqn]{article}
+
+% Texteigenschaften
+\usepackage[utf8x]{inputenc}    % utf8x kann alle
+Textcodierungen interpretieren
+\usepackage[T1]{fontenc}        %Schriftcodierung mit UTF-8
+\usepackage{textcomp}           %Erweiterung von fontenc
+\usepackage{lmodern}            %Erweiterung des
+Zeichensatzes
+
+% Grafikpakete
+\usepackage{graphics}
+\usepackage{graphicx}
+
+% Spracheigenschaften
+\usepackage[english,ngerman]{babel}     % ngerman = Neues
+Deutsch; babel = internationalisierung einschalten
+
+% Links im PDF erzeugen (für Verzeichnisse, URLs etc.)
+\usepackage{hyperref}
+
+% Mathepakete
+\usepackage{amsmath}
+\usepackage[all]{xy}
+
+% Glossarpakete
+\usepackage[xindy]{glossaries}
+\usepackage{makeidx}
+
+% PDF-Pakete
+\usepackage{pdfpages}
+
+% Spezielle Grafikpakete
+\usepackage{graphicx}
+
+% ???
+\usepackage{printlen}
+
+% Lorem-Ipsum Paket
+\usepackage{blindtext}  % generiert sprachlich korrekten
+"Fülltext"
+\usepackage{lipsum}     % generiert klassischen
+"lorem-ipsum"
+
+% Euro-Betrag Zeichen Paket
+\usepackage{eurosym}
+
+% Abkürzungs-Paket 
+\usepackage{acronym}
+
+% Auflistungs-Paket (für Auflistungen mit "a)", "b)"...
+\usepackage{enumitem}
+
+% URL-Paket (URLs richtig darstellen und umbrechen z.B. in
+Literaturverzeichnissen
+\usepackage{url}
+
+% Zitier-Paket
+\usepackage{cite}       % allgemeines Paket
+%\usepackage{apacite}   % Zitat-Paket für APA-Norm Zitate
+
+% Kopf- und Fusszeilen Paket
+\usepackage{fancyhdr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%% Kopf und Fusszeilen definieren
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}       % deklaieren dass ein eigener Syle
+benutzt wird, eben "fancy"
+\fancyhf{}              % alle Kopf- und Fusszeilenfelder
+bereinigen
+
+\addtolength{\textwidth}{1cm}           % anpassen der
+textbreite
+\addtolength{\evensidemargin}{-5mm}     % anpassen des
+Einzugs für gerade Seiten
+\addtolength{\oddsidemargin}{-5mm}      % anpassen des
+Einzugs für ungerade Seiten
+
+\addtolength{\headwidth}{1cm}           % anpassen der
+Kopf/Fusszeilenbreite (Summe von den Oberen)
+
+\fancyhead[L]{\LaTeX Notizen}           % Kopfzeile links
+\fancyhead[C]{}                             % Kopfzeile
+mitte
+\fancyhead[R]{}                         % Kopfzeile rechts
+
+\renewcommand{\headrulewidth}{0.4pt}    % obere Trennlinie
+
+\fancyfoot[L]{Ervin Mazlagic}           % Fusszeile links
+\fancyfoot[C]{\today}                   % Fusszeile mitte
+\fancyfoot[R]{\thepage}                 % Fusszeile rechts
+
+\renewcommand{\footrulewidth}{0.4pt}    %untere Trennlinie
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%% Ende der Präambel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+
+% Anfang des Dokumenteninhaltes
+\begin{document}
+
+\include{cover}
+
+% Abbildungsverzeichnis einfügen
+\listoffigures
+
+% Tabellenverzeichnis einfügen
+\listoftables
+
+% Abkürzungsverzeichnis einfügen
+% >>> Die Liste der Abkürzungen ist in einem separaten File
+\include{meine_abkuerzungen}            
+
+% Literaturverzeichnis einfügen
+\nocite{*}                              % alle Quellen
+auflisten
+\bibliography{dateiname}                    % Bibliographie
+wählen (BibTex Datei)
+\bibliographystyle{apacite}             % Zitationsstyl
+wählen (hier nach APA-Norm)
+
+% Ende des Dokumenteninhaltes
+\end{document}

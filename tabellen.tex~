@@ -1,0 +1,167 @@
+\section{Tabellen}
+
+\indent
+Tabellen in \LaTeX~zählen sicherlich zu den
+Königsdisziplinen, denn meist ist man sich gewohnt sehr
+viele Formatierungen zu benutzen (Ausrichtungen, Farben,
+Einrückungen etc.). Will man von Anfang an ``komplexe''
+Tebellen erstellen (von Hand) so fällt man leicht auf die
+Nase oder tut sich schwer, da dies wirklich eine starke
+Umgewöhnung ist.
+
+Um das Prinzip einer Tabelle zu erläutern dient das
+folgende Snippet.
+
+\begin{center}
+\begin{lstlisting}[caption=Einfache Tabelle]{easytable}
+% Einfache Tabelle
+
+\begin{tabular}{r l c}
+Tag         & Haupttätigkeit        & Stunden \\
+Montag      & Erholen vom Weekend   & 8 \\
+Dienstag    & arbeiten              & 8 \\
+Mittwoch    & arbeiten              & 8 \\
+Donnerstag  & Kernel-Updates prüfen & 12 \\
+Freitag     & weekend vorbereiten   & 4 \\
+Samstag     & feiern                & 24 \\
+Sonntag     & schlafen              & 24 \\
+\end{tabular}
+\end{lstlisting}
+\end{center}
+
+% Einfache Tabelle
+\fbox{\parbox{0.9\columnwidth}{
+\begin{tabular}{r l c}
+Tag         & Haupttätigkeit        & Stunden \\
+Montag      & Erholen vom Weekend   & 8 \\
+Dienstag    & arbeiten              & 8 \\
+Mittwoch    & arbeiten              & 8 \\
+Donnerstag  & Kernel-Updates prüfen & 12 \\
+Freitag     & weekend vorbereiten   & 4 \\
+Samstag     & feiern                & 24 \\
+Sonntag     & schlafen              & 24 \\
+\end{tabular}
+}}
+
+\begin{description}
+    \item \lstinline|[tabular]| ist eine Tabellenumgebung
+die viele Parameter setzt (wie etwa Ausrichtung, Position
+etc.).
+    \item \lstinline|[{r l l}]| weist \lstinline|tabular|
+an, dass eine Tabelle erzeugt werden soll mit drei Spalten
+(entsprechend den drei Buchstaben \lstinline|r l l|) und
+dass die 1. Spalte rechtsbündig ist (denn der erste
+Buchstaben ist \lstinline|r| für right), die 2. soll
+linksbündig sein (\lstinline|l| für left) und die 3. Spalte
+soll zentriert werden (\lstinline|c| für center).
+\end{description}
+
+\noindent
+Um Spalten und Zeilen mit Linien zu Trennen, so wie das oft
+gewünscht ist bei Tabellen, kann ein \lstinline|\hline|
+eingefügt werden um horizontale Linien zu erstellen und ein
+\lstinline||| und Spalten voneinander zu trennen.
+
+\begin{center}
+\begin{lstlisting}[caption=Tabelle mit
+Trennstrichen]{linetable}
+% Einfache Tabelle mit Trennstrichen
+
+\begin{tabular}{r | l | c}
+Tag         & Haupttätigkeit        & Stunden \\
+\hline
+Montag      & Erholen vom Weekend   & 8 \\
+Dienstag    & arbeiten              & 8 \\
+Mittwoch    & arbeiten              & 8 \\
+Donnerstag  & Kernel-Updates prüfen & 12 \\
+Freitag     & weekend vorbereiten   & 4 \\
+Samstag     & feiern                & 24 \\
+Sonntag     & schlafen              & 24 \\
+\end{tabular}
+\end{lstlisting}
+\end{center}
+
+% Einfache Tabelle mit Trennstrichen
+\fbox{\parbox{0.9\columnwidth}{
+\begin{tabular}{r | l | c}
+Tag         & Haupttätigkeit        & Stunden \\
+\hline
+Montag      & Erholen vom Weekend   & 8 \\
+Dienstag    & arbeiten              & 8 \\
+Mittwoch    & arbeiten              & 8 \\
+Donnerstag  & Kernel-Updates prüfen & 12 \\
+Freitag     & weekend vorbereiten   & 4 \\
+Samstag     & feiern                & 24 \\
+Sonntag     & schlafen              & 24 \\
+\end{tabular}
+}}\\\\
+
+\noindent
+Eine professionelle Tabelle beinhaltet aber nebst passenden
+Ausrichtungen der Zellen auch eine allgemein passende Form.
+So sollte eine gute Tabelle auch eine Indexierung haben.
+Mein Vorschlag um gute Tabellen zu erstellen ist wie folgt.
+
+\begin{center}
+\begin{lstlisting}[caption=Bessere Tebelle]{goodtable}
+% Bessere Tabelle
+
+\begin{table}[htbp]
+\fbox{\parbox{0.9\columnwidth}{
+\begin{tabular}{| r | l | c |}
+\hline
+Tag         & Haupttätigkeit        & Stunden \\
+\hline
+Montag      & Erholen vom Weekend   & 8 \\
+\hline
+Dienstag    & arbeiten              & 8 \\
+\hline
+Mittwoch    & arbeiten              & 8 \\
+\hline
+Donnerstag  & Kernel-Updates prüfen & 12 \\
+\hline
+Freitag     & weekend vorbereiten   & 4 \\
+\hline
+Samstag     & feiern                & 24 \\
+\hline
+Sonntag     & schlafen              & 24 \\
+\hline
+\end{tabular} }} \newline\newline
+\caption{Wochenüberblick}
+\label{tab:wochenueberblick}
+\end{table}
+\end{lstlisting}
+\end{center}
+
+
+\begin{table}[htbp]
+\centering
+\fbox{\parbox{0.9\columnwidth}{
+\begin{tabular}{| r | l | c |}
+\hline
+\rowcolor{gray!10}
+Tag         & Haupttätigkeit        & Stunden \\
+\hline
+Montag      & Erholen vom Weekend   & 8 \\
+\hline
+Dienstag    & arbeiten              & 8 \\
+\hline
+Mittwoch    & arbeiten              & 8 \\
+\hline
+Donnerstag  & Kernel-Updates prüfen & 12 \\
+\hline
+Freitag     & weekend vorbereiten   & 4 \\
+\hline
+Samstag     & feiern                & 24 \\
+\hline
+Sonntag     & schlafen              & 24 \\
+\hline
+\end{tabular} }} \newline\newline
+\caption{Wochenüberblick}
+\label{tab:wochenueberblick}
+\end{table}\\\\
+
+\noindent
+Wird die Tabelle so erzeugt. so ist diese auch indexiert
+und somit kann diese im Tebellenverzeichnis aufgelistet
+werden. Dies ist oft verlangt bei grösseren Arbeiten.

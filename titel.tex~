@@ -1,0 +1,14 @@
+\section{Titel}
+\noindent
+Titel und Untertitel in \LaTeX~zu definieren ist sehr
+einfach dank der einschlagigen Syntax.
+
+\begin{center}
+\begin{lstlisting}[caption=Titel]{Titel}
+\chapter{Kapitel}   % Chapter wird nur in Buechern
+verwendet!
+\section{Titel}
+\subsection{Untertitel}
+\subsubsection{Unteruntertitel}
+\end{lstlisting}
+\end{center}

@@ -1,0 +1,204 @@
+% Dokumenteigenschaften bzw. Dokeumentenklasse
+\documentclass[a4paper,
+               10pt,
+               fleqn]{article}
+
+% Texteigenschaften
+\usepackage[utf8]{inputenc}    % utf8x kann alle
+                                % Textcodierungen
+                                % interpretieren
+\usepackage[T1]{fontenc}        % Schriftcodierung mit UTF-8
+\usepackage{textcomp}           % Erweiterung von fontenc
+\usepackage{lmodern}            % Erweiterung des
+
+
+\usepackage{color, colortbl}
+
+
+
+
+\usepackage{courier}
+
+
+
+
+
+
+\def\LuXeria{{
+\rm L\kern-.1667em\kern-.125em\lower-.55ex\hbox{u}\kern-.125emX\kern-.2em\lower-.25ex\hbox{e}\kern-.0em\lower-.5ex\hbox{r}\kern-0.125em\lower.5ex\hbox{i}\kern-0.125\lower-.25ex\hbox{a}
+}}
+
+
+
+
+
+
+
+
+\usepackage{dtklogos}
+
+%\PrerenderUnicode{ä}
+%\PrerenderUnicode{ü}
+%\PrerenderUnicode{ö}
+
+
+% Grafikpakete
+\usepackage{graphics}
+\usepackage{graphicx}
+
+% Spracheigenschaften
+\usepackage[ngerman]{babel}     % ngerman = Neues
+                                % Deutsch; babel =
+                                % internationalisierung
+                                % einschalten
+
+% Links im PDF erzeugen (für Verzeichnisse, URLs etc.)
+\usepackage{hyperref}
+
+% Mathepakete
+\usepackage{amsmath}
+\usepackage[all]{xy}
+
+% Glossarpakete
+\usepackage[xindy]{glossaries}
+\usepackage{makeidx}
+
+% PDF-Pakete
+\usepackage{pdfpages}
+
+% Spezielle Grafikpakete
+\usepackage{graphicx}
+
+% Source-Code Paket
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\usepackage{listings}
+\lstset{language=[LaTeX]TeX}
+\lstloadlanguages{TeX}
+\lstset{basicstyle=\ttfamily,
+        numbers=left,
+        numberstyle=\tiny, 
+        numbersep=5pt,
+        breaklines=true,
+        texcsstyle=\color{black},
+        backgroundcolor=\color{gray!10},
+        commentstyle=\color{darkgreen},
+        %keywordstyle=\color{red}\bfseries,
+        %stringstyle=\color{blue}\bfseries,
+        frame=single,
+        tabsize=2,
+        rulecolor=\color{black!30},
+        title=\lstname,
+        escapeinside={\%*}{*)},
+        breaklines=true,
+        breakatwhitespace=true,
+        framextopmargin=2pt,
+        framexbottommargin=2pt,
+        inputencoding=utf8,
+        extendedchars=true,
+        literate={Ö}{{\"O}}1
+                 {Ä}{{\"A}}1
+                 {Ü}{{\"U}}1
+                 {ü}{{\"u}}1
+                 {ä}{{\"a}}1
+                 {ö}{{\"o}}1 }
+    
+    
+
+% ???
+\usepackage{printlen}
+
+% Lorem-Ipsum Paket
+\usepackage{blindtext}	% generiert sprachlich korrekten "Fülltext"
+\usepackage{lipsum}		% generiert klassischen "lorem-ipsum"
+
+% Euro-Betrag Zeichen Paket
+\usepackage{eurosym}
+
+% Abkürzungs-Paket 
+\usepackage{acronym}
+
+% Auflistungs-Paket (für Auflistungen mit "a)", "b)"...
+\usepackage{enumitem}
+
+% URL-Paket (URLs richtig darstellen und umbrechen z.B. in Literaturverzeichnissen
+\usepackage{url}
+
+% Zitier-Paket
+\usepackage{cite}		% allgemeines Paket
+\usepackage{apacite}	% Zitat-Paket für APA-Norm Zitate
+
+% Kopf- und Fusszeilen Paket
+\usepackage{fancyhdr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Kopf und Fusszeilen definieren
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}		% deklaieren dass ein eigener Syle benutzt wird, eben "fancy"
+\fancyhf{}				% alle Kopf- und Fusszeilenfelder bereinigen
+
+\addtolength{\textwidth}{1cm}			% anpassen der textbreite
+\addtolength{\evensidemargin}{-5mm}		% anpassen des Einzugs für gerade Seiten
+\addtolength{\oddsidemargin}{-5mm}		% anpassen des
+                                       % Einzugs für
+                                       % ungerade Seiten
+
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+
+\addtolength{\headwidth}{1cm}			% anpassen der Kopf/Fusszeilenbreite (Summe von den Oberen)
+
+\fancyhead[L]{\LuXeria} 			        % Kopfzeile links
+\fancyhead[C]{\LaTeX~Notizen}            % Kopfzeile mitte
+\fancyhead[R]{\rightmark}	            % Kopfzeile rechts
+
+\renewcommand{\headrulewidth}{0.4pt} 	% obere Trennlinie
+
+\fancyfoot[L]{Ervin Mazlagic}			% Fusszeile links
+\fancyfoot[C]{\today}					% Fusszeile mitte
+\fancyfoot[R]{\thepage}					% Fusszeile rechts
+
+\renewcommand{\footrulewidth}{0.4pt} 	%untere Trennlinie
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Ende der Präambel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Anfang des Dokumenteninhaltes
+\begin{document}
+
+\include{cover}
+
+\section*{Einleitung}
+\input{einleitung}
+\newpage
+\tableofcontents
+\newpage   
+\include{preamble}
+\include{titel}
+\include{aufzaehlungen}
+\include{bilder}
+\include{brief}
+\include{tabellen}
+\include{literaturverzeichnis}
+
+% Abbildungsverzeichnis einfügen
+\listoffigures
+
+% Tabellenverzeichnis einfügen
+\listoftables
+
+% Listing-Verzeichnis
+\lstlistoflistings
+
+% Abkürzungsverzeichnis einfügen
+% >>> Die Liste der Abkürzungen ist in einem separaten File
+\include{meine_abkuerzungen}			
+
+% Literaturverzeichnis einfügen
+\nocite{*}								% alle Quellen auflisten
+\bibliography{literatur}				    % Bibliographie wählen (BibTex Datei)
+\bibliographystyle{apacite}				% Zitationsstyl wählen (hier nach APA-Norm)
+
+% Ende des Dokumenteninhaltes
+\end{document}

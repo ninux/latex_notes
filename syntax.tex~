@@ -1,0 +1,23 @@
+\section{Syntax}
+
+\noindent
+Bevor man beginnt \LaTeX~Code zu schreiben, sollte man sich
+ganz kurz die Syntax ansehen und verstanden haben.
+
+In \LaTeX~gibt es eine durchgängige Syntax wie in vielen
+Programmiersprachen.
+
+\begin{lstlisting}[caption=Einfache Aufzählung]{Name}
+% Syntax von LaTeX
+
+\noindent
+
+\usepackage[ngerman]{babel}
+
+\usepackage{listings} 
+\lstset{basicstyle=\ttfamily,
+        numbers=left,
+        numberstyle=\tiny, 
+        .}
+\end{lstlisting}
+

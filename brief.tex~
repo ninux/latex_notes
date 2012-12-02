@@ -1,0 +1,92 @@
+\section{Brief}
+
+\begin{lstlisting}[caption=Allgemeine Settings,
+                   label={lst:simplelist}]{Name}
+\documentclass[11pt]{g-brief}
+\usepackage[utf8]{inputenc}
+\usepackage{ngerman}
+\usepackage{enumerate}
+\usepackage{eurosym}
+\lochermarke
+\faltmarken
+\fenstermarken
+\trennlinien                   
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Angaben Absender,
+                   label={lst:simplelist}]{Name}
+% Angaben des Absenders
+\Name                {Max Sendermann}
+\Strasse             {Senderstrasse 99}
+\Zusatz              {}
+\RetourAdresse       {}
+\Ort                 {6000 Luzern}
+\Land                {Schweiz}
+
+\Telefon             {+41/41 450 88 77}
+\Telefax             {+41/41 450 88 78}
+\Telex               {}
+\HTTP                {www.sendermann.ch}
+\EMail               {info@sendermann.ch}
+
+\Bank                {Post-Finance}
+\BLZ                 {}
+\Konto               {40-123456-05}
+
+\Unterschrift        {Max Sendermann}                  
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Postvermerk und Empfaenger,
+                   label={lst:simplelist}]{Name}
+% Sendungsart/Postvermerk
+\Postvermerk         {A-Post}
+
+% Angaben des Empfängers
+\Adresse             {Moritz Empfängermann\\
+                      Empfangsstrasse 11\\
+                      8600 Zürich}                  
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Betreff und Datum,
+                   label={lst:simplelist}]{Name}
+\Betreff             {Empfangsbestätigung}
+
+\Datum               {\today}
+\IhrZeichen          {}
+\IhrSchreiben        {}
+\MeinZeichen         {}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Briefinhalt,
+                   label={lst:simplelist}]{Name}
+% Anrede & Gruss
+\Anrede              {Sehr geehrter Herr Empfängermann,}
+\Gruss               {Mit freundlichem Gruss}{1cm}
+
+% Anhang/Anlagen
+\Anlagen             {eBay-Kaufbestätigung\\
+                      Einzahlungsschein}
+\Verteiler           {}
+
+% Briefinhalt
+\begin{document}
+\begin{g-brief}
+Wie per Mail vereinbart, sende ich Ihnen hiermit die
+Empfangsbestätigung des von Ihnen auf eBay erworbenen
+Artikels. Die von eBay generierte Kaufbestätigung und der
+quittierte Einzahlungsschein sind als Kopie hinterlegt zu
+diesem Brief als Anlage.
+\end{g-brief}
+\end{document}
+
+\endinput                 
+\end{lstlisting}
+
+\begin{figure}[htbp]
+% Bild einfügen                
+    \centering
+\fbox{   
+\includegraphics[width=1.0\textwidth]{briefm_muster.pdf} }
+    \caption{Brief}
+    \label{pic:inderbar}
+\end{figure}
