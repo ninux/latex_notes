@@ -1,0 +1,22 @@
+\section{Mathematik}
+
+\indent
+Für die Eingabe von Formeln gibt es zwei Möglichkeiten. Für einzelne Formeln innerhalb von Text wird die Formel mit dem Zeichen \verb?$? begrenzt. 
+\begin{center}
+\begin{lstlisting}[caption=Mathe im Text]{dollarmath}
+% Mathematik im Text eingebettet
+
+Die Fläche eines Kreises wird mit der Formel $\pi \cdot r^2$ berechnet. 
+\end{lstlisting}
+\end{center}
+Die Fläche eines Kreises wird mit der Formel $\pi \cdot r^2$ berechnet. \\
+
+Für grössere Gleichungen vom Text abgesetzt wird die Formel mit \verb?\[? begonnen und mit \verb?\]? beendet. 
+\begin{center}
+\begin{lstlisting}[caption=Mathe im Text]{dollarmath}
+% Abgesetzte Formel
+
+\[ \sum_{K=0}^\infty \frac{x^K}{K!} \]
+\end{lstlisting}
+\end{center}
+\[ \sum_{K=0}^\infty \frac{x^K}{K!} \]
